@@ -1,4 +1,4 @@
-package pkg;
+package personnages;
 
 public class Romain {
 	private String nom;
@@ -19,5 +19,18 @@ public class Romain {
 
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
+	}
+
+	public void recevoirCoup(int forceCoup) {
+		force=force-forceCoup;
+		
+		if(force < 1) {
+			parler("J'abandonne !");
+			force=0;
+		}
+		
+		else {
+			parler("Aïe");
+		}
 	}
 }
