@@ -4,6 +4,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	private Village village = null;
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -37,6 +38,18 @@ public class Gaulois {
 
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
+	}
+
+	// a ne pas utiliser a part par la classe Village
+	public void setVillage(Village village) {
+		this.village = village;
+	}
+
+	public void sePresenter() {
+		if (null == village) {
+			System.out.println("Le Gaulois " + this.getNom()
+					+ " : \"Bonjour, je m'appelle \" + this.getNom() + \". Je voyage de villages en villages.\"");
+		}
 	}
 
 }
