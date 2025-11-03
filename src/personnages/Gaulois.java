@@ -4,6 +4,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	//si non null, fait partie du Village village, ou est le chef du Village village
 	private Village village = null;
 
 	public Gaulois(String nom, int force) {
@@ -48,7 +49,19 @@ public class Gaulois {
 	public void sePresenter() {
 		if (null == village) {
 			System.out.println("Le Gaulois " + this.getNom()
-					+ " : \"Bonjour, je m'appelle \" + this.getNom() + \". Je voyage de villages en villages.\"");
+					+ " : \"Bonjour, je m'appelle " + this.getNom() + ". Je voyage de villages en villages.\"");
+		}
+		
+		else {
+			if(village.getChef() == this) {
+				System.out.println("Le Gaulois " + this.getNom()
+				+ " : \"Bonjour, je m'appelle " + this.getNom() + ". Je suis le chef du village " + village.getNom() + ".\"");
+			}
+			
+			else {
+				System.out.println("Le Gaulois " + this.getNom()
+				+ " : \"Bonjour, je m'appelle " + this.getNom() + ". J'habite le village " + village.getNom() + ".\"");
+			}
 		}
 	}
 

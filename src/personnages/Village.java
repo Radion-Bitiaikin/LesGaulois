@@ -48,14 +48,21 @@ public class Village {
 	public static void main(String[] args) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 6);
 		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		Gaulois doublePolemix = new Gaulois("doublePolémix", 25);
 		Village village = new Village("Village des Irréductibles", abraracourcix);
 		// Gaulois gaulois = village.trouverVillageois(30);
 
 		village.ajouterVillageois(asterix);
+		village.ajouterVillageois(obelix);
 		Gaulois gaulois = village.trouverVillageois(1);
 		System.out.println(gaulois);
 		gaulois = village.trouverVillageois(2);
 		System.out.println(gaulois);
 		village.afficherVillageois();
+		
+		asterix.sePresenter();
+		abraracourcix.sePresenter();
+		doublePolemix.sePresenter();
 	}
 }
