@@ -1,5 +1,7 @@
 package personnages;
 
+import objets.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force;
@@ -48,6 +50,8 @@ public class Romain {
 
 		Romain minus = new Romain("Minus", 6);
 		
+		System.out.println(Equipement.CASQUE);
+		System.out.println(Equipement.BOUCLIER);
 
 	}
 
