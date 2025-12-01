@@ -2,11 +2,20 @@ package objets;
 
 public enum Equipement {
 	
-	CASQUE,
-	BOUCLIER;
+	CASQUE("casque"),
+	BOUCLIER("bouclier");
 	
-	private int nom;
+	private String nom;
 	
-	public void setNom()
+	private Equipement(String nom) {
+		this.nom = nom;
+	}
 	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public String toString() {
+		return nom;
+	}
 }

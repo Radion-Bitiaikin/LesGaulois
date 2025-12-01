@@ -11,7 +11,7 @@ public class Chaudron {
 	}
 
 	public boolean resterPotion() {
-		return (0 < quantitePotion);
+		return 0 < quantitePotion;
 	}
 
 	public int prendreLouche() {

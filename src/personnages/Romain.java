@@ -5,6 +5,8 @@ import objets.Equipement;
 public class Romain {
 	private String nom;
 	private int force;
+	Equipement[] equipements = new Equipement[2];
+	int nbEquipement = 0;
 
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -13,7 +15,7 @@ public class Romain {
 	}
 	
 	private boolean isInvariantVerified() {
-		return ( 0 <= force ) ;
+		return 0 <= force;
 	}
 
 	public String getNom() {
@@ -32,9 +34,9 @@ public class Romain {
 	public void recevoirCoup(int forceCoup) {
 		
 		assert 0 <= forceCoup;
-		assert force > force - forceCoup;
 		
-		force = force - forceCoup;
+		assert force > force - forceCoup;
+		force -= forceCoup;
 
 		if (force < 1) {
 			parler("J'abandonne !");
@@ -43,6 +45,26 @@ public class Romain {
 
 		else {
 			parler("Aïe");
+		}
+		
+		assert isInvariantVerified();
+	}
+	
+	void sEquiper(Equipement equipement) {
+		switch(nbEquipement) {
+		case 2:
+			System.out.println("Le soldat " + nom + " est déjà bien protégé !");
+			break;
+		case 1:
+			if( equipement!=null && !equipement.equals(equipements[0]) ) {
+				equipements[1] = equipement;
+				System.out.println("Le soldat " + nom + " s’equipe avec un " + equipement.toString() + ".");
+			} else {
+				System.out.println("Le soldat " + nom + " possede déja un " + equipement.toString() + " !");
+			}
+			break;
+		case 0:
+			equipements[0] = equipement;
 		}
 	}
 	
